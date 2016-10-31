@@ -11,8 +11,7 @@ namespace SerilogPoc
     {
         protected void Application_Start()
         {
-            SerilogConfig.Configure();
-            Log.Information("Configuration Application");
+            IoCConfig.Configure();
             
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
@@ -20,7 +19,6 @@ namespace SerilogPoc
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            Log.Information("Application Configured");
         }
     }
 }

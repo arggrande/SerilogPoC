@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Serilog;
 
 namespace SerilogPoc.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger _logger;
+
+        public HomeController(ILogger logger)
+        {
+            _logger = logger;
+        }
         public ActionResult Index()
         {
-            Log.Information("Invoking Index() Action");
+            _logger.Information("Invoking Index() Action with injected logger");
             ViewBag.Title = "Home Page";
-            Log.Information("Finished Index() Action");
+            _logger.Information("Finished Index() Action with injected logger");
             return View();
         }
     }

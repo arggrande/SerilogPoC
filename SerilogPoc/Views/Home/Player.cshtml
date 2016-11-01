@@ -1,0 +1,39 @@
+﻿@model SerilogPoc.Models.Player
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8"><h1>@Model.Name</h1></div>    
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            Alias:
+        </div>
+        <div class="col-md-5">
+            @Model.Alias
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            Country: 
+        </div>
+        <div class="col-md-5">
+            @Model.Country
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            Team: 
+        </div>
+        <div class="col-md-5">
+            @Model.Team
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            More Information:
+        </div>
+        <div class="col-md-5">
+            <a href="@Model.Url">@Model.Alias</a>
+        </div>
+    </div>
+</div>

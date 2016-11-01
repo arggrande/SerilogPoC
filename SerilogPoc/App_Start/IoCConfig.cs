@@ -11,6 +11,7 @@ using Autofac.Core.Activators.Reflection;
 using Autofac.Integration.Mvc;
 using AutofacSerilogIntegration;
 using Serilog;
+using SerilogPoc.Data;
 using SerilogWeb.Classic.Enrichers;
 
 namespace SerilogPoc
@@ -26,6 +27,7 @@ namespace SerilogPoc
             ConfigureSerilog(builder);
            
             builder.RegisterControllers(typeof(WebApiApplication).Assembly);
+            builder.RegisterType<PlayerService>().AsImplementedInterfaces();
 
             Container = builder.Build();
 
